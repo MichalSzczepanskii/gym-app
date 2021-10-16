@@ -32,19 +32,28 @@
                 background-position: 40% 120%;
             }
             .background-text h2, .background-text p{
-                text-shadow: black 0px 0px 15px;
+                text-shadow: black 0 0 15px;
+            }
+            .mainColorSVG{
+                filter: invert(17%) sepia(70%) saturate(3468%) hue-rotate(257deg) brightness(105%) contrast(103%);
+            }
+            #mobileMenu {
+                transition: transform 0.2s;
+            }
+            .hideMenu {
+                transform: translateY(-100%);
             }
         </style>
     </head>
     <body>
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-purple-600 h-20 flex items-center px-6">
-        <div class="flex w-full justify-between">
+    <nav class="bg-purple-600 flex items-center px-6 flex-col relative z-10">
+        <div class="flex w-full justify-between min-h-20 py-5">
             <div class="flex items-center">
                 <h2 class="text-white text-3xl font-bold">Good<span class="text-purple-300">lyfe</span></h2>
             </div>
-            <div class="cursor-pointer">
-                <img src="{{asset('img/icon/menu.svg')}}" alt="menu" />
+            <div class="cursor-pointer" id="hamburger" onclick="toggleMenu()">
+                <img src="{{asset('img/icon/menu.svg')}}" alt="menu"/>
             </div>
 {{--            <div class="flex w-full justify-center lg:justify-between">--}}
 {{--                <div class="flex items-center gap-x-10 text-white text-md flex-col lg:flex-row">--}}
@@ -72,6 +81,15 @@
 {{--            </div>--}}
         </div>
     </nav>
+    <div class="w-full px-8 bg-purple-800 absolute hideMenu" id="mobileMenu">
+        <ul class="text-white">
+            <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Classes</a></li>
+            <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Timetable</a></li>
+            <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Clubs</a></li>
+            <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Nutrition</a></li>
+            <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Free Trial</a></li>
+        </ul>
+    </div>
     <div id="welcome" class="background-text h-2/4 flex flex-col justify-center gap-y-9 items-center">
         <div class="text-center">
             <h2 class="font-bold text-white text-5xl">Welcome to<br/> Goodlyfe Gyms</h2>
@@ -160,12 +178,24 @@
             </div>
         </div>
     </div>
-    <div class="bg-purple-700 py-10 text-center">
-        <h2 class="font-bold text-white text-5xl pt-7">Social</h2>
+    <div class="bg-gray-200 py-10 text-center">
+        <h2 class="font-bold text-purple-700 text-5xl pt-7">Social</h2>
         <div class="flex items-center justify-center gap-x-7 py-8">
-            <a href="#"><span class="w-24 block h-24 rounded-full bg-white text-purple-700">&nbsp;</span></a>
-            <a href="#"><span class="w-24 block h-24 rounded-full bg-white text-purple-700">&nbsp;</span></a>
-            <a href="#"><span class="w-24 block h-24 rounded-full bg-white text-purple-700">&nbsp;</span></a>
+            <a href="#">
+                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center">
+                    <img src="{{asset('img/facebook.svg')}}" width="34%" alt="facebook" class="mainColorSVG">
+                </span>
+            </a>
+            <a href="#">
+                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center">
+                    <img src="{{asset('img/youtube.svg')}}" width="34%" alt="youtube" class="mainColorSVG">
+                </span>
+            </a>
+            <a href="#">
+                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center">
+                    <img src="{{asset('img/instagram.svg')}}" width="34%" alt="instagram" class="mainColorSVG">
+                </span>
+            </a>
         </div>
     </div>
 
@@ -199,5 +229,27 @@
             </div>
         </div>
     </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuItems = document.querySelectorAll('#mobileMenu > ul > li');
+        console.log(menuItems);
+        menuItems.forEach((item) => {
+            item.addEventListener('click', toggleMenu)
+        })
+
+        function toggleMenu() {
+            if(mobileMenu.classList.contains('hideMenu')) {
+                mobileMenu.classList.remove('hideMenu');
+                hamburger.querySelector('img').src = '{{asset('img/icon/close.svg')}}';
+            }else {
+                mobileMenu.classList.add('hideMenu');
+                hamburger.querySelector('img').src = '{{asset('img/icon/menu.svg')}}';
+            }
+        }
+        document.addEventListener('click', (e) => {
+            console.log(e.target.id);
+        })
+    </script>
     </body>
 </html>
