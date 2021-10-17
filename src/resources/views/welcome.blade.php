@@ -23,9 +23,6 @@
                 background-size: 240%;
                 background-position: 56% 0%;
             }
-            #welcome h2 {
-
-            }
             #motivation {
                 background: url({{asset('img/welcome3.jpg')}}) no-repeat;
                 background-size: 120%;
@@ -48,18 +45,44 @@
                     background-size: 110%;
                     background-position: 40% 65%;
                 }
+                #welcome {
+                    background-size: 120%;
+                    background-position: 56% 0%;
+                }
+            }
+            @media (min-width: 1024px) {
+                #welcome {
+                    background-size: cover;
+                    background-position: 56% 0%;
+                }
+                #motivation {
+                    background-size: cover;
+                    background-position: 0 60%;
+                }
             }
         </style>
     </head>
     <body>
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-purple-600 flex items-center px-6 flex-col relative z-10">
+    <nav class="bg-purple-600 flex items-center px-6 flex-col relative z-10 lg:px-20">
         <div class="flex w-full justify-between min-h-20 py-5">
             <div class="flex items-center">
-                <h2 class="text-white text-3xl font-bold">Good<span class="text-purple-300">lyfe</span></h2>
+                <h2 class="text-white text-3xl font-bold lg:text-4xl">Good<span class="text-purple-300">lyfe</span></h2>
             </div>
-            <div class="cursor-pointer" id="hamburger" onclick="toggleMenu()">
+            <div class="cursor-pointer lg:hidden" id="hamburger" onclick="toggleMenu()">
                 <img src="{{asset('img/icon/menu.svg')}}" alt="menu"/>
+            </div>
+            <div class="hidden lg:flex w-full justify-center">
+                <ul class="text-white text-center min-w-min w-5/12 flex">
+                    <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Classes</a></li>
+                    <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Timetable</a></li>
+                    <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Clubs</a></li>
+                    <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Nutrition</a></li>
+                    <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Free Trial</a></li>
+                </ul>
+            </div>
+            <div class="hidden lg:flex justify-center items-center ">
+                <a href="#" class="py-3 px-14 bg-white text-purple-700 rounded-full hover:bg-gray-200 hover:border-4 hover:border-purple-500 border-transparent border-2 hover:border-current">Login</a>
             </div>
         </div>
     </nav>
@@ -72,58 +95,65 @@
             <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Free Trial</a></li>
         </ul>
     </div>
-    <div id="welcome" class="background-text h-2/4 md:h-2/5 flex flex-col justify-center gap-y-9 items-center">
+    <div id="welcome" class="background-text h-2/4 md:h-2/5 lg:h-4/5 flex flex-col justify-center gap-y-9 items-center">
         <div class="text-center">
-            <h2 class="font-bold text-white text-5xl md:text-6xl">Welcome to<br/> Goodlyfe Gyms</h2>
+            <h2 class="font-bold text-white text-5xl md:text-6xl lg:text-7xl">Welcome to<br/> Goodlyfe Gyms</h2>
         </div>
-        <a href="#">
-            <span class="bg-purple-600 text-white px-8 py-4 rounded-full text-lg md:text-xl">See the benefits</span>
+        <a href="#" class="bg-purple-600 text-white block px-8 py-4 rounded-full text-lg md:text-xl
+        lg:px-10 lg:py-6 border-2 border-transparent hover:border-purple-700 hover:bg-white hover:text-purple-700">
+           See the benefits
         </a>
     </div>
-    <div class="my-7">
-        <div>
-            <img src="{{asset('img/welcome2.jpg')}}" class="m-auto w-4/5 md:w-3/5" alt="workout">
+    <div class="my-7 lg:flex lg:flex-row lg:justify-center lg:items-center lg:my-32">
+        <div class="lg:w-1/2">
+            <img src="{{asset('img/welcome2.jpg')}}" class="m-auto w-4/5 md:w-3/5 lg:w-3/5" alt="workout">
         </div>
-        <div class="px-8 md:flex md:flex-col md:items-center">
-            <h2 class="font-bold text-purple-600 text-5xl text-center my-5">Meet your new body</h2>
+        <div class="px-8 md:flex md:flex-col md:items-center lg:w-2/5 lg:items-start">
+            <h2 class="font-bold text-purple-600 text-5xl text-center md:text-left my-5">Meet your new body</h2>
             <p class="text-justify leading-loose text-lg md:w-3/4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget lectus urna. Nulla magna tortor, bibendum in molestie sed, gravida nec felis. Sed id egestasegestas risus, ut imperdiet augue.
             </p>
-            <a href="#" class="w-full block py-4 text-purple-600 border-2 border-purple-600 rounded-full text-center font-bold mt-5 md:w-2/4">
+            <a href="#" class="w-full block py-4 text-purple-600 border-2 border-purple-600 rounded-full text-center font-bold mt-5 md:w-2/4
+            hover:border-transparent hover:text-white hover:bg-purple-700">
                 View the FAQ
             </a>
         </div>
     </div>
-    <div id="motivation" class="my-7 background-text h-3/5 md:h-2/4 flex flex-col justify-center items-center px-8">
+
+    <div id="motivation" class="my-7 background-text h-3/5 md:h-2/4 lg:h-4/5 flex flex-col justify-center items-center px-8">
         <div class="text-center md:flex md:flex-col items-center">
-            <h2 class="font-bold text-white text-5xl md:w-3/4">Become more than you are</h2>
-            <p class="text-white text-lg leading-loose font-medium md:w-3/4">Staying active is great fun and keeps you healthy.  Check out how you can join in.</p>
+            <h2 class="font-bold text-white text-5xl md:w-3/4 lg:w-full lg:text-6xl">Become more than you are</h2>
+            <p class="text-white text-lg leading-loose font-medium md:w-3/4 lg:w-3/5">Staying active is great fun and keeps you healthy.  Check out how you can join in.</p>
         </div>
-        <a href="#" class="w-full block py-4 text-white bg-purple-600 rounded-full text-center font-medium mt-5 md:w-2/4">
+        <a href="#" class="w-full block py-4 text-white bg-purple-600 rounded-full text-center font-medium mt-5 md:w-2/4 lg:w-1/6
+        border-2 border-transparent hover:border-purple-700 hover:bg-white hover:text-purple-700">
             Let's play
         </a>
     </div>
-    <div class="my-7">
-        <div>
-            <img src="{{asset('img/welcome4.jpg')}}" class="m-auto w-4/5 md:w-3/5" alt="workout">
+
+    <div class="my-7 lg:flex lg:flex-row-reverse lg:justify-center lg:items-center lg:my-32">
+        <div class="lg:w-1/2">
+            <img src="{{asset('img/welcome4.jpg')}}" class="m-auto w-4/5 md:w-3/5 lg:w-4/5" alt="workout">
         </div>
-        <div class="px-8 md:flex md:flex-col md:items-center">
-            <h2 class="font-bold text-purple-600 text-5xl text-center my-5">Premium Facilities</h2>
-            <p class="text-justify leading-loose text-lg md:w-3/4">
+        <div class="px-8 md:flex md:flex-col md:items-center lg:w-2/6 lg:items-start">
+            <h2 class="font-bold text-purple-600 text-5xl text-center md:text-left my-5">Premium Facilities</h2>
+            <p class="text-justify leading-loose text-lg md:w-5/6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget lectus urna. Nulla magna tortor, bibendum in molestie sed, gravida nec felis. Sed id egestasegestas risus, ut imperdiet augue.
             </p>
-            <a href="#" class="w-full block py-4 text-purple-600 border-2 border-purple-600 rounded-full text-center font-bold mt-5 md:w-2/4">
+            <a href="#" class="w-full block py-4 text-purple-600 border-2 border-purple-600 rounded-full text-center font-bold mt-5 md:w-2/4
+            hover:border-transparent hover:text-white hover:bg-purple-700">
                 Learn more
             </a>
         </div>
     </div>
-    <div class="mt-20 px-8 pb-4 bg-gradient-to-t from-purple-200">
+
+    <div class="mt-20 px-8 pb-16 bg-gradient-to-t from-purple-200 lg:mt-44">
         <div>
-            <h2 class="text-3xl font-semibold text-gray-700 text-center">Real Stories from<br/> Real Customers</h2>
-            <p class="text-gray-700 text-center">Be inspired with these experiences.</p>
+            <h2 class="text-3xl font-semibold text-gray-700 text-center lg:text-5xl">Real Stories from<br/> Real Customers</h2>
+            <p class="text-gray-700 text-center lg:text-2xl lg:py-2">Be inspired with these experiences.</p>
         </div>
         <div class="md:flex md:flex-wrap md:gap-x-5 md:justify-center">
-            <div class="bg-white px-8 py-7 rounded-lg shadow-lg my-6 md:w-80 md:flex-shrink-0">
+            <div class="bg-white px-8 py-7 rounded-lg shadow-lg my-6 md:w-80 md:flex-shrink-0 lg:w-96">
                 <h2 class="text-purple-600 text-3xl font-semibold text-center">17kg lost!</h2>
                 <div class="flex pt-4">
                     <p class="font-bold text-6xl text-purple-300 pr-2" style="font-family: Times New Roman, serif">&lsquo;&lsquo;</p>
@@ -134,7 +164,7 @@
                     <span class="font-semibold text-gray-700">James John</span>
                 </div>
             </div>
-            <div class="bg-white px-8 py-7 rounded-lg shadow-lg my-6 md:w-80 md:flex-shrink-0">
+            <div class="bg-white px-8 py-7 rounded-lg shadow-lg my-6 md:w-80 md:flex-shrink-0 lg:w-96">
                 <h2 class="text-purple-600 text-3xl font-semibold text-center">8kg lost!</h2>
                 <div class="flex pt-4">
                     <p class="font-bold text-6xl text-purple-300 pr-2" style="font-family: Times New Roman, serif">&lsquo;&lsquo;</p>
@@ -145,7 +175,7 @@
                     <span class="font-semibold text-gray-700">Mary Patricia</span>
                 </div>
             </div>
-            <div class="bg-white px-8 py-7 rounded-lg shadow-lg my-6 md:w-80 md:flex-shrink-0">
+            <div class="bg-white px-8 py-7 rounded-lg shadow-lg my-6 md:w-80 md:flex-shrink-0 lg:w-96">
                 <h2 class="text-purple-600 text-3xl font-semibold text-center">43kg lost!</h2>
                 <div class="flex pt-4">
                     <p class="font-bold text-6xl text-purple-300 pr-2" style="font-family: Times New Roman, serif">&lsquo;&lsquo;</p>
@@ -160,51 +190,62 @@
     </div>
     <div class="bg-gray-200 py-10 text-center">
         <h2 class="font-bold text-purple-700 text-5xl pt-7">Social</h2>
-        <div class="flex items-center justify-center gap-x-7 py-8">
+        <div class="flex items-center justify-center gap-x-7 py-8 lg:gap-x-24">
             <a href="#">
-                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center">
+                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center
+                hover:bg-purple-50 border-2 border-transparent hover:border-purple-700">
                     <img src="{{asset('img/facebook.svg')}}" width="34%" alt="facebook" class="mainColorSVG">
                 </span>
             </a>
             <a href="#">
-                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center">
+                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center
+                hover:bg-purple-50 border-2 border-transparent hover:border-purple-700">
                     <img src="{{asset('img/youtube.svg')}}" width="34%" alt="youtube" class="mainColorSVG">
                 </span>
             </a>
             <a href="#">
-                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center">
+                <span class="w-24 block h-24 rounded-full bg-white text-purple-700 flex justify-center
+                hover:bg-purple-50 border-2 border-transparent hover:border-purple-700">
                     <img src="{{asset('img/instagram.svg')}}" width="34%" alt="instagram" class="mainColorSVG">
                 </span>
             </a>
         </div>
     </div>
 
-    <footer class="bg-gray-900 pt-12 px-12 md:flex md:flex-wrap">
-        <div class="my-5 md:w-2/4 md:px-5">
+    <footer class="bg-gray-900 pt-12 px-12 md:flex md:flex-wrap lg:px-32 lg:justify-between">
+        <div class="my-5 md:w-2/4 md:px-5 lg:w-1/4">
             <a href="#">
                 <h2 class="font-bold text-white text-4xl">Good<span class="text-purple-700">lyfe</span></h2>
             </a>
             <p class="text-white leading-7 text-justify py-5">Lorem ipsum dolor amet, consectetur adipiscing elit. Eget
                 nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.</p>
         </div>
-        <div class="my-5 md:w-2/4 md:px-7">
+        <div class="my-7 md:w-2/4 md:px-7 lg:w-1/4">
             <h2 class="text-white text-2xl">Quick Links</h2>
             <ul class="my-6 list-none">
-                <li class="text-white text-lg my-5 font-light"><a href="#">Classes</a></li>
-                <li class="text-white text-lg my-5 font-light"><a href="#">Timetable</a></li>
-                <li class="text-white text-lg my-5 font-light"><a href="#">Clubs</a></li>
-                <li class="text-white text-lg my-5 font-light"><a href="#">Nutrition</a></li>
-                <li class="text-white text-lg my-5 font-light"><a href="#">Free Trial</a></li>
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Classes</a></li>
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Timetable</a></li>
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Clubs</a></li>
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Nutrition</a></li>
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Free Trial</a></li>
             </ul>
         </div>
-        <div class="text-white font-light text-center pt-5 pb-7 md:flex-shrink-0 md:w-full">
+        <div class="my-16 md:w-2/4 md:px-7 lg:w-1/4">
+            <h2 class="text-white text-2xl">Reach us</h2>
+            <ul class="my-6 list-none">
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#"><img src="{{asset('img/icon/email.svg')}}" class="w-7 mainColorSVG float-left mr-4" alt="email"><span class="leading-6">admin@goodlyfe.com</span></a></li>
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#"><img src="{{asset('img/icon/phone.svg')}}" class="w-7 mainColorSVG float-left mr-4" alt="email"><span class="leading-6">+88 98765 43210</span></a></li>
+                <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#"><img src="{{asset('img/icon/location.svg')}}" class="w-7 mainColorSVG float-left mr-4" alt="email"><span class="leading-6">90210 Beverly Hills California USA</span></a></li>
+            </ul>
+        </div>
+        <div class="text-white font-light text-center pt-5 pb-7 md:flex-shrink-0 md:w-full lg:flex lg:flex-row-reverse lg:justify-between">
             <div>
-                <a href="#">Terms & Conditions</a> |
-                <a href="#">Privacy Policy</a> <span class="hidden md:inline">|</span>
-                <a href="#">Sitemap</a> |
-                <a href="#">Disclaimer</a>
+                <a href="#" class="hover:text-purple-400">Terms & Conditions</a> <span class="md:px-1.5">|</span>
+                <a href="#" class="hover:text-purple-400">Privacy Policy</a> <span class="hidden md:inline md:px-1.5">|</span>
+                <a href="#" class="hover:text-purple-400">Sitemap</a> <span class="md:px-1.5">|</span>
+                <a href="#" class="hover:text-purple-400">Disclaimer</a>
             </div>
-            <div class="mt-5">
+            <div class="mt-5 lg:mt-0">
                 &copy; {{now()->year}} GoodLyfe. All Rights reserved
             </div>
         </div>
