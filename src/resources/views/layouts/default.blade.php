@@ -145,10 +145,22 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuItems = document.querySelectorAll('#mobileMenu > ul > li');
-    console.log(menuItems);
     menuItems.forEach((item) => {
         item.addEventListener('click', toggleMenu)
     })
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+    })
+    mobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    })
+    window.addEventListener('click', () => {
+        if(!mobileMenu.classList.contains('hideMenu')) {
+            mobileMenu.classList.add('hideMenu');
+            hamburger.querySelector('img').src = '{{asset('img/icon/menu.svg')}}';
+        }
+    });
 
     function toggleMenu() {
         if(mobileMenu.classList.contains('hideMenu')) {
