@@ -5,16 +5,22 @@
         lg:w-2/4 lg:border-0 lg:shadow-none lg:px-28 lg:py-0 lg:my-0 lg:max-w-3xl lg:min-w-max">
             <div class="text-center pt-5 pb-9 lg:pb-14">
                 <h2 class="font-semibold text-2xl lg:text-4xl">Sign in to your account</h2>
+            <!-- Session Status -->
+            <x-auth-session-status class="mb-4" :status="session('status')" />
+
+            <!-- Validation Errors -->
+            <x-auth-validation-errors :errors="$errors" />
             </div>
-            <form action="">
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
                 <div class="py-3">
                     <label for="email">Email address</label>
-                    <input type="text" name="login" id="email"
+                    <input type="text" name="email" id="email" required
                            class="block border border-gray-300 rounded-md px-3 py-2 w-full">
                 </div>
                 <div class="py-3">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password"
+                    <input type="password" name="password" id="password" required
                            class="block border border-gray-300 rounded-md px-3 py-2 w-full">
                 </div>
                 <div class="flex justify-between py-5">
@@ -23,7 +29,9 @@
                             <input type="checkbox" class="h-4 w-4 border-gray-300 rounded"> Remember me
                         </label>
                     </div>
-                    <a href="#" class="block text-purple-700 hover:text-purple-400">Forgot your password?</a>
+                    @if (Route::has('password.request'))
+                        <a href="#" class="block text-purple-700 hover:text-purple-400">Forgot your password?</a>
+                    @endif
                 </div>
                 <div class="py-4">
                     <button class="w-full py-3 border-2 border-purple-700 rounded-full text-purple-700

@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/free.min.css') }}" rel="stylesheet"> <!-- icons -->
+    <link href="{{ asset('css/flag.min.css') }}" rel="stylesheet"> <!-- icons -->
     <style>
         html, body {
             width: 100%;
@@ -17,6 +19,7 @@
         }
         body {
             font-family: 'Poppins', 'sans-serif';
+            overflow-x: hidden;
         }
         #welcome {
             background: url({{asset('img/welcome1.jpg')}}) fixed no-repeat;
@@ -65,7 +68,7 @@
 <body>
 <!-- This example requires Tailwind CSS v2.0+ -->
 <nav class="bg-purple-600 flex items-center px-6 flex-col relative z-10 lg:px-20">
-    <div class="flex w-full justify-between min-h-20 py-5">
+    <div class="flex w-full justify-between py-3">
         <div class="flex items-center">
             <a href="{{route('welcome')}}">
                 <h2 class="text-white text-3xl font-bold lg:text-4xl">Good<span class="text-purple-300">lyfe</span></h2>
@@ -84,7 +87,7 @@
             </ul>
         </div>
         <div class="hidden lg:flex justify-center items-center ">
-            <a href="{{route('login')}}" class="py-3 px-14 bg-white text-purple-700 rounded-full hover:bg-gray-200 hover:border-4 hover:border-purple-500 border-transparent border-2 hover:border-current">Login</a>
+            <a href="{{route('login')}}" class="py-2 px-12 bg-white text-purple-700 rounded-full hover:bg-gray-200 hover:border-4 hover:border-purple-500 border-transparent border-2 hover:border-current">Login</a>
         </div>
     </div>
 </nav>
@@ -171,9 +174,7 @@
             hamburger.querySelector('img').src = '{{asset('img/icon/menu.svg')}}';
         }
     }
-    document.addEventListener('click', (e) => {
-        console.log(e.target.id);
-    })
 </script>
+<script src="{{ asset('js/guest.js') }}" defer></script>
 </body>
 </html>
