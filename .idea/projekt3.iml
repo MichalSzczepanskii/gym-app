@@ -122,6 +122,8 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/laravel/breeze" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/laravel-permission" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/arcanedev/support" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/arcanedev/log-viewer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
