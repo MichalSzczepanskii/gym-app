@@ -117,6 +117,11 @@
                 <li class="hover:bg-purple-600 rounded w-full transition-colors">
                     <a href="#" class="py-3 mt-1.5 w-full block flex items-center"><i class="cil-people text-lg mr-6 p-1"></i><span class="hideText">Clients</span></a>
                 </li>
+                @can('logs')
+                <li class="hover:bg-purple-600 rounded w-full transition-colors">
+                    <a href="{{route('log-viewer::dashboard')}}" class="py-3 mt-1.5 w-full block flex items-center"><i class="cil-monitor text-lg mr-6 p-1"></i><span class="hideText">Logs</span></a>
+                </li>
+                @endcan
             </ul>
         </div>
         <div class="flex justify-end px-5 pb-3 pt-4 border-t-2 border-purple-900 bg-purple-800" id="hideContainer">
@@ -143,7 +148,7 @@
             </div>
         </div>
         <div class="px-5 pb-4 flex flex-col h-full lg:px-8 lg:pt-2">
-            <h2 class="text-2xl font-semibold py-4 lg:py-5">{{ $title }}</h2>
+            <h2 class="text-2xl font-semibold py-4 lg:py-5">{{ $title ?? 'Dashboard' }}</h2>
             <div class="bg-white h-full rounded-md shadow p-6">
                 @yield('content')
             </div>

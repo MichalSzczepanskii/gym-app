@@ -17,6 +17,7 @@ class PermissionsSeeder extends Seeder {
         Permission::create(['name' => 'users.update']);
         Permission::create(['name' => 'users.delete']);
         Permission::create(['name' => 'users.change_role']);
+        Permission::create(['name' => 'logs']);
 
         /*
          * Admin Role permission
@@ -27,7 +28,8 @@ class PermissionsSeeder extends Seeder {
                                       'users.create',
                                       'users.update',
                                       'users.delete',
-                                      'users.change_role']);
+                                      'users.change_role',
+                                      'logs']);
 
         /*
          * Super Admin Role permission
