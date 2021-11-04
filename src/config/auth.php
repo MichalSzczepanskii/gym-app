@@ -108,4 +108,12 @@ return [
 
     'password_timeout' => 10800,
 
+    /*
+     * Define roles' names
+     */
+    'roles' => [
+        'super_admin_role' => 'super-admin',
+        'admin_role' => 'admin',
+        'user_role' => 'user'
+    ]
 ];

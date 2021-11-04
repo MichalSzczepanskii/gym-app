@@ -24,8 +24,6 @@ RUN docker-php-ext-install pdo pdo_mysql
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
 
 COPY ./src /var/www/html
 RUN COMPOSER_VENDOR_DIR="/var/www/vendor" composer install
@@ -33,22 +31,13 @@ RUN COMPOSER_VENDOR_DIR="/var/www/vendor" composer install
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install nodejs -y
 RUN npm install
-RUN npm run dev
-
-RUN chown -R www:www /var/www/html
-CMD ls -al
 
 
-#FROM node:14.18-alpine
-#ENV NODE_ENV=production
-#COPY src/package.json* src/package-lock.json* /var/www/html/
-#RUN npm install --production
-#RUN rm -rf node_modules
-#RUN npm cache clear --force
-#RUN npm install
-#RUN ["chmod", "755", "/var/www/html"]
-#RUN npm run dev
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
+RUN chown www:www -R /var/www/html
 
 USER www
+RUN npm run dev
 CMD ["php-fpm"]
 EXPOSE 9000
