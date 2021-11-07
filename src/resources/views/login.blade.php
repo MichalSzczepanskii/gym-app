@@ -4,7 +4,7 @@
         <div class="md:w-3/5 md:shadow-2xl md:px-7 md:py-6 md:border md:border-gray-300 md:rounded-xl md:my-10
         lg:w-2/4 lg:border-0 lg:shadow-none lg:px-28 lg:py-0 lg:my-0 lg:max-w-3xl lg:min-w-max">
             <div class="text-center pt-5 pb-9 lg:pb-14">
-                <h2 class="font-semibold text-2xl lg:text-4xl">Sign in to your account</h2>
+                <h2 class="font-semibold text-2xl lg:text-4xl">{{__('auth.login.title')}}</h2>
             <!-- Session Status -->
             <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -14,28 +14,28 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="py-3">
-                    <label for="email">Email address</label>
+                    <label for="email">{{__('auth.login.email')}}</label>
                     <input type="text" name="email" id="email" required
                            class="block border border-gray-300 rounded-md px-3 py-2 w-full">
                 </div>
                 <div class="py-3">
-                    <label for="password">Password</label>
+                    <label for="password">{{__('auth.login.password')}}</label>
                     <input type="password" name="password" id="password" required
                            class="block border border-gray-300 rounded-md px-3 py-2 w-full">
                 </div>
                 <div class="flex justify-between py-5">
                     <div>
                         <label>
-                            <input type="checkbox" class="h-4 w-4 border-gray-300 rounded"> Remember me
+                            <input type="checkbox" class="h-4 w-4 border-gray-300 rounded"> {{__('auth.login.remember-me')}}
                         </label>
                     </div>
                     @if (Route::has('password.request'))
-                        <a href="#" class="block text-purple-700 hover:text-purple-400">Forgot your password?</a>
+                        <a href="#" class="block text-purple-700 hover:text-purple-400">{{__('auth.login.forgot-password')}}</a>
                     @endif
                 </div>
                 <div class="py-4">
                     <button class="w-full py-3 border-2 border-purple-700 rounded-full text-purple-700
-                    hover:border-transparent hover:text-white hover:bg-purple-700">Login</button>
+                    hover:border-transparent hover:text-white hover:bg-purple-700">{{__('auth.login.button')}}</button>
                 </div>
             </form>
         </div>

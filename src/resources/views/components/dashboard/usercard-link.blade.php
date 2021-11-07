@@ -1,0 +1,2 @@
+@props(['icon', 'name', 'route' => ''])
+<div class="px-2"><a href="{{$route == '' ? '#' : route($route)}}" class="block py-2 px-2.5 hover:bg-purple-100 mb-1.5 rounded transition-colors flex items-center"><i class="{{$icon}} mr-2"></i>{{__($name)}}</a></div>
