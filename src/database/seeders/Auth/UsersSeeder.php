@@ -12,9 +12,10 @@ class UsersSeeder extends Seeder {
     public function run() {
 
         $user = User::create([
-            'name' => 'SuperAdmin',
+            'first_name' => 'Super',
+            'last_name' => 'Admin',
             'email' => 'superadmin@localhost',
-            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'pesel' => '12312312311',
             'password' => Hash::make('root12')
         ]);
 
@@ -22,13 +23,21 @@ class UsersSeeder extends Seeder {
         if(isset($superAdminRole)) $user->assignRole($superAdminRole);
 
         $user = User::create([
-            'name' => 'User Test',
+            'first_name' => 'User',
+
+            'last_name' => 'Test',
             'email' => 'usertest@localhost',
-            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'pesel' => '12312312312',
             'password' => Hash::make('root12')
         ]);
 
         $userRole = Role::findByName(config('auth.roles.user_role'));
         if(isset($userRole)) $user->assignRole($userRole);
+
+        $users = User::factory()->count(10)->create();
+        $userRole = Role::findByName(config('auth.roles.user_role'));
+        $users->each(function($user) use ($userRole) {
+            $user->assignRole($userRole);
+        });
     }
 }

@@ -114,6 +114,6 @@ return [
     'roles' => [
         'super_admin_role' => 'super-admin',
         'admin_role' => 'admin',
-        'user_role' => 'user'
+        'user_role' => 'client'
     ]
 ];

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Database\Seeders\Auth\PermissionsSeeder;
 use Database\Seeders\Auth\RolesSeeder;
 use Database\Seeders\Auth\UsersSeeder;
@@ -20,5 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesSeeder::class);
         $this->call(PermissionsSeeder::class);
         $this->call(UsersSeeder::class);
+        $this->call(CarnetsSeeder::class);
+        $this->call(UserCarnetSeeder::class);
+        $this->call(VisitSeeder::class);
     }
 }
