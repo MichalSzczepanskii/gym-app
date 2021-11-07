@@ -79,28 +79,28 @@
         </div>
         <div class="hidden lg:flex w-full justify-center">
             <ul class="text-white text-center min-w-min w-5/12 flex">
-                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Classes</a></li>
-                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Timetable</a></li>
-                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Clubs</a></li>
-                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Nutrition</a></li>
-                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">Free Trial</a></li>
+                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">{{__('welcome.classes')}}</a></li>
+                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">{{__('welcome.timetable')}}</a></li>
+                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">{{__('welcome.clubs')}}</a></li>
+                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">{{__('welcome.nutrition')}}</a></li>
+                <li class="p-3 text-lg min-w-max w-1/5 hover:bg-purple-800 rounded-3xl"><a href="#" class="px-5">{{__('welcome.free-trial')}}</a></li>
             </ul>
         </div>
         <div class="hidden lg:flex justify-center items-center ">
-            <a href="{{route('login')}}" class="py-2 px-12 bg-white text-purple-700 rounded-full hover:bg-gray-200 hover:border-4 hover:border-purple-500 border-transparent border-2 hover:border-current">Login</a>
+            <a href="{{route('login')}}" class="py-2 px-12 bg-white text-purple-700 rounded-full hover:bg-gray-200 hover:border-4 hover:border-purple-500 border-transparent border-2 hover:border-current">{{__('auth.login.button')}}</a>
         </div>
     </div>
 </nav>
 <div class="w-full px-8 bg-purple-800 absolute hideMenu" id="mobileMenu">
     <ul class="text-white">
-        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Classes</a></li>
-        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Timetable</a></li>
-        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Clubs</a></li>
-        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Nutrition</a></li>
-        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">Free Trial</a></li>
+        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">{{__('welcome.classes')}}</a></li>
+        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">{{__('welcome.timetable')}}</a></li>
+        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">{{__('welcome.clubs')}}</a></li>
+        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">{{__('welcome.nutrition')}}</a></li>
+        <li class="py-3 text-lg w-32"><a href="#" class="w-full h-full block">{{__('welcome.free-trial')}}</a></li>
     </ul>
     <div class="py-5 pb-8 w-full flex justify-center">
-        <a href="{{route('login')}}" class="py-2 px-14 bg-white text-purple-700 rounded-full hover:bg-gray-200 hover:border-4 hover:border-purple-500 border-transparent border-2 hover:border-current">Login</a>
+        <a href="{{route('login')}}" class="py-2 px-14 bg-white text-purple-700 rounded-full hover:bg-gray-200 hover:border-4 hover:border-purple-500 border-transparent border-2 hover:border-current">{{__('auth.login.button')}}</a>
     </div>
 </div>
 
@@ -115,17 +115,17 @@
             nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.</p>
     </div>
     <div class="my-7 md:w-2/4 md:px-7 lg:w-1/4">
-        <h2 class="text-white text-2xl">Quick Links</h2>
+        <h2 class="text-white text-2xl">{{__('welcome.quick-links')}}</h2>
         <ul class="my-6 list-none">
-            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Classes</a></li>
-            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Timetable</a></li>
-            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Clubs</a></li>
-            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Nutrition</a></li>
-            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">Free Trial</a></li>
+            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">{{__('welcome.classes')}}</a></li>
+            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">{{__('welcome.timetable')}}</a></li>
+            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">{{__('welcome.clubs')}}</a></li>
+            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">{{__('welcome.nutrition')}}</a></li>
+            <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#">{{__('welcome.free-trial')}}</a></li>
         </ul>
     </div>
     <div class="my-16 md:w-2/4 md:px-7 lg:w-1/4">
-        <h2 class="text-white text-2xl">Reach us</h2>
+        <h2 class="text-white text-2xl">{{__('welcome.reach-us')}}</h2>
         <ul class="my-6 list-none">
             <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#"><img src="{{asset('img/icon/email.svg')}}" class="w-7 mainColorSVG float-left mr-4" alt="email"><span class="leading-6">admin@goodlyfe.com</span></a></li>
             <li class="text-white text-lg my-5 font-light hover:text-purple-400"><a href="#"><img src="{{asset('img/icon/phone.svg')}}" class="w-7 mainColorSVG float-left mr-4" alt="email"><span class="leading-6">+88 98765 43210</span></a></li>
@@ -134,13 +134,13 @@
     </div>
     <div class="text-white font-light text-center pt-5 pb-7 md:flex-shrink-0 md:w-full lg:flex lg:flex-row-reverse lg:justify-between">
         <div>
-            <a href="#" class="hover:text-purple-400">Terms & Conditions</a> <span class="md:px-1.5">|</span>
-            <a href="#" class="hover:text-purple-400">Privacy Policy</a> <span class="hidden md:inline md:px-1.5">|</span>
-            <a href="#" class="hover:text-purple-400">Sitemap</a> <span class="md:px-1.5">|</span>
-            <a href="#" class="hover:text-purple-400">Disclaimer</a>
+            <a href="#" class="hover:text-purple-400">{{__('welcome.terms')}}</a> <span class="md:px-1.5">|</span>
+            <a href="#" class="hover:text-purple-400">{{__('welcome.privacy-policy')}}</a> <span class="hidden md:inline md:px-1.5">|</span>
+            <a href="#" class="hover:text-purple-400">{{__('welcome.sitemap')}}</a> <span class="md:px-1.5">|</span>
+            <a href="#" class="hover:text-purple-400">{{__('welcome.disclaimer')}}</a>
         </div>
         <div class="mt-5 lg:mt-0">
-            &copy; {{now()->year}} GoodLyfe. All Rights reserved
+            &copy; {{now()->year}} GoodLyfe. {{__('welcome.all-rights')}}
         </div>
     </div>
 </footer>

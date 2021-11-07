@@ -32,13 +32,11 @@
         .hide {
             transform: rotate(180deg);
         }
-        #menu ul li a{
-            padding-left: 0.75rem;
-            padding-right: 0.85rem;
-        }
-        #menu ul {
-            padding: 1rem 1rem;
-        }
+        /*#menu ul li a{*/
+        /*    padding-left: 0.75rem;*/
+        /*    padding-right: 0.85rem;*/
+        /*}*/
+
         .profileMenu:before {
             content: '';
             position: absolute;
@@ -97,55 +95,13 @@
 </head>
 <body class="bg-gray-100">
 <div class="flex h-full">
-    <div class="bg-purple-700 w-full md:w-72 h-full text-white hideMenu flex flex-col justify-between shorten" id="menu">
-        <div class="w-full">
-            <div class="flex items-center justify-center h-16 border-b-2 border-purple-900 bg-purple-800">
-                <a href="{{route('welcome')}}">
-                    <h2 class="text-white text-4xl font-bold">G<span class="hideText">ood<span class="text-purple-300">lyfe</span></span></h2>
-                </a>
-            </div>
-            <ul class="mt-1.5 py-4 text-base w-full font-light text-gray-200">
-                <li class="bg-purple-800 rounded w-full transition-colors">
-                    <a href="#" class="py-3 mt-1.5 w-full block flex items-center"><i class="cil-home text-lg mr-6 p-1"></i><span class="hideText">Dashboard</span></a>
-                </li>
-                <li class="hover:bg-purple-600 rounded w-full transition-colors">
-                    <a href="#" class="py-3 mt-1.5 w-full block flex items-center"><i class="cil-weightlifitng text-lg mr-6 p-1"></i><span class="hideText">Carnets</span></a>
-                </li>
-                <li class="hover:bg-purple-600 rounded w-full transition-colors">
-                    <a href="#" class="py-3 mt-1.5 w-full block flex items-center"><i class="cil-briefcase text-lg mr-6 p-1"></i><span class="hideText">Contracts</span></a>
-                </li>
-                <li class="hover:bg-purple-600 rounded w-full transition-colors">
-                    <a href="#" class="py-3 mt-1.5 w-full block flex items-center"><i class="cil-people text-lg mr-6 p-1"></i><span class="hideText">Clients</span></a>
-                </li>
-                @can('logs')
-                <li class="hover:bg-purple-600 rounded w-full transition-colors">
-                    <a href="{{route('log-viewer::dashboard')}}" class="py-3 mt-1.5 w-full block flex items-center"><i class="cil-monitor text-lg mr-6 p-1"></i><span class="hideText">Logs</span></a>
-                </li>
-                @endcan
-            </ul>
-        </div>
-        <div class="flex justify-end px-5 pb-3 pt-4 border-t-2 border-purple-900 bg-purple-800" id="hideContainer">
-            <i class="icon-right-open text-3xl cursor-pointer hide hidden lg:inline" onclick="toggleMenuDekstop()"></i>
-            <i class="icon-right-open text-3xl cursor-pointer hide lg:hidden" onclick="toggleMenu()"></i>
-        </div>
-
-    </div>
+    <x-dashboard.sidebar/>
     <div class="w-full flex flex-col h-full">
         <div class="bg-white w-full h-16 flex justify-between items-center px-4 py-2 shadow-md lg:justify-end lg:px-10">
             <div class="mr-2">{{ Auth::user()->name }}</div>
             <i class="icon-menu text-2xl cursor-pointer lg:hidden text-gray-600" id="hamburger" onclick="toggleMenu()"></i>
             <img src="{{asset('img/person1.jpg')}}" class="w-12 h-12 p-0.5 rounded-full border border-purple-700 cursor-pointer" alt="Person" id="userAvatar">
-            <div class="absolute right-4 lg:right-10 bg-white shadow-xl border rounded profileMenu py-2 text-sm w-36 text-gray-700 hidden" id="ddUserMenu">
-                <div class="px-2"><a href="#" class="block py-2 px-2.5 hover:bg-purple-100 mb-1.5 rounded transition-colors flex items-center"><i class="cil-user mr-2"></i>Profile</a></div>
-                <div class="px-2"><a href="#" class="block py-2 px-2.5 hover:bg-purple-100 my-1.5 rounded transition-colors flex items-center"><i class="cil-settings mr-2"></i>Settings</a></div>
-                <hr/>
-                <div class="px-2">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <a href="{{route('logout')}}" class="block py-2 px-2.5 hover:bg-purple-100 mt-2 rounded transition-colors flex items-center" onclick="event.preventDefault(); this.closest('form').submit()"><i class="cil-account-logout mr-2"></i>Logout</a>
-                    </form>
-                </div>
-            </div>
+            <x-dashboard.usercard/>
         </div>
         <div class="px-5 pb-4 flex flex-col h-full lg:px-8 lg:pt-2">
             <h2 class="text-2xl font-semibold py-4 lg:py-5">{{ $title ?? 'Dashboard' }}</h2>
