@@ -1,0 +1,1 @@
+<th class="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider hover:text-gray-800">{{$slot}}</th>

@@ -1,6 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/dashboard.js": "/js/dashboard.js",
+    "/js/carnets.js": "/js/carnets.js",
+    "/js/clients.js": "/js/clients.js",
+    "/js/user_carnets.js": "/js/user_carnets.js",
+    "/js/manifest.js": "/js/manifest.js",
     "/css/app.css": "/css/app.css",
+    "/js/vendor.js": "/js/vendor.js",
     "/fonts/CoreUI-Icons-Brand.eot": "/fonts/CoreUI-Icons-Brand.eot",
     "/fonts/CoreUI-Icons-Brand.svg": "/fonts/CoreUI-Icons-Brand.svg",
     "/fonts/CoreUI-Icons-Brand.ttf": "/fonts/CoreUI-Icons-Brand.ttf",
@@ -215,5 +221,7 @@
     "/svg/flag/cif-zw.svg": "/svg/flag/cif-zw.svg",
     "/icons/sprites/brand.svg": "/icons/sprites/brand.svg",
     "/icons/sprites/flag.svg": "/icons/sprites/flag.svg",
-    "/icons/sprites/free.svg": "/icons/sprites/free.svg"
+    "/icons/sprites/free.svg": "/icons/sprites/free.svg",
+    "/vendor/datatables/i18n/pl.json": "/vendor/datatables/i18n/pl.json",
+    "/vendor/datatables/i18n/en.json": "/vendor/datatables/i18n/en.json"
 }

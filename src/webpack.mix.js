@@ -26,4 +26,12 @@ mix.js('resources/js/app.js', 'public/js')
     require('postcss-import'),
     require('tailwindcss'),
     require('autoprefixer'),
-]);
+    ])
+    .js('resources/js/dashboard.js', 'public/js')
+    .js('resources/js/carnets.js', 'public/js')
+    .js('resources/js/clients.js', 'public/js')
+    .js('resources/js/user_carnets.js', 'public/js')
+    .copy('resources/views/vendor/datatables/i18n/pl.json', 'public/vendor/datatables/i18n')
+    .copy('resources/views/vendor/datatables/i18n/en.json', 'public/vendor/datatables/i18n')
+    .sourceMaps()
+    .extract();

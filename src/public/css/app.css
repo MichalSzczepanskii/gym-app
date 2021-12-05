@@ -1,4 +1,4 @@
-/*! tailwindcss v2.2.17 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -32135,6 +32135,189 @@ select {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body {
+  font-family: 'Poppins', 'sans-serif';
+}
+
+#menu {
+  position: absolute;
+  transition: transform 0.2s;
+}
+
+.hideMenu {
+  transform: translateX(-100%);
+}
+
+.hide {
+  transform: rotate(180deg);
+}
+
+/*#menu ul li a{*/
+
+/*    padding-left: 0.75rem;*/
+
+/*    padding-right: 0.85rem;*/
+
+/*}*/
+
+.profileMenu:before {
+  content: '';
+  position: absolute;
+  border: .85rem solid;
+  border-color: transparent transparent rgb(229, 231, 235) transparent;
+  top: -1.71rem;
+  right: 0.62rem;
+}
+
+.profileMenu:after {
+  content: '';
+  position: absolute;
+  border: .85rem solid;
+  border-color: transparent transparent white transparent;
+  top: -1.65rem;
+  right: 0.63rem;
+}
+
+.profileMenu {
+  top: 4.4rem;
+}
+
+table [aria-sort='ascending']:after, table th:after, table [aria-sort='descending']:after{
+  font-family: CoreUI-Icons-Free!important;
+  speak:none;
+  font-style:normal;
+  font-weight:400;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+table th:not([aria-sort]):not(.sorting_disabled):after {
+  content: "\00a0";
+  padding: 0 0.3rem 0.3rem 0.3rem;
+  background-image: url("https://cdn.datatables.net/1.10.19/images/sort_both.png");
+}
+
+table [aria-sort='ascending']:after {
+  content: "\00a0";
+  padding: 0 0.3rem;
+  background-image: url("https://cdn.datatables.net/1.10.19/images/sort_asc.png") !important;
+}
+
+table [aria-sort='descending']:after {
+  content: "\00a0";
+  padding: 0 0.3rem 0.3rem 0.3rem;
+  background-image: url("https://cdn.datatables.net/1.10.19/images/sort_desc.png") !important;
+}
+
+table [aria-sort]{
+  font-weight: bold;
+}
+
+.dataTables_wrapper {
+  padding: 0.5rem 0;
+}
+
+.dataTables_wrapper > .row {
+  margin: 0.5rem 0;
+}
+
+.dataTables_wrapper > .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dataTables_wrapper > .row > [class="col-sm-12"] {
+  width: 100% ;
+}
+
+.dataTables_paginate {
+  margin-bottom: 0.2rem;
+}
+
+.dataTables_paginate > .pagination {
+  display: flex;
+  gap: 0 0.5rem;
+  margin: 0.25rem 1rem;
+}
+
+.dataTables_paginate > .pagination > .paginate_button > .page-link {
+  color: black;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem
+}
+
+.dataTables_info {
+  margin: 0.25rem 0;
+  color: #4B5563;
+}
+
+.dataTables_paginate > .pagination > .active > .page-link {
+  background: #8B5CF6;
+  color: white;
+}
+
+.dataTables_paginate > .pagination > .disabled > a {
+  cursor: default;
+  color: #4B5563 !important;
+}
+
+.dataTables_paginate > .pagination > :not(.disabled) > .page-link:hover {
+  background: #7C3AED;
+}
+
+.dataTables_wrapper [type=search], .dataTables_wrapper select {
+  border-radius: 0.5rem;
+  width: 16rem;
+  height: 2.2rem;
+  margin-left: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.dataTables_wrapper select {
+  width: auto;
+  margin: 0 0.5rem;
+  line-height: 1;
+}
+
+.dataTables_wrapper input:focus, .dataTables_wrapper select:focus {
+  --tw-ring-color: rgba(139, 92, 246, var(--tw-ring-opacity));
+  border: 1px solid #8B5CF6;
+}
+
+.dataTables_empty, .dataTables_processing.card {
+  text-align: center;
+  padding: 1.2rem 0;
+}
+
+.dataTable tbody > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+  --tw-divide-opacity: 1;
+  border-color: rgba(229, 231, 235, var(--tw-divide-opacity));
+}
+
+.dataTable tbody {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.dataTable tbody td {
+  white-space: nowrap;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 640px) {

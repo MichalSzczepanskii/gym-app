@@ -118,6 +118,21 @@
       <path value="$PROJECT_DIR$/src/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/src/vendor/arcanedev/support" />
       <path value="$PROJECT_DIR$/src/vendor/arcanedev/log-viewer" />
+      <path value="$PROJECT_DIR$/src/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/src/vendor/yajra/laravel-datatables-html" />
+      <path value="$PROJECT_DIR$/src/vendor/yajra/laravel-datatables-buttons" />
+      <path value="$PROJECT_DIR$/src/vendor/yajra/laravel-datatables" />
+      <path value="$PROJECT_DIR$/src/vendor/yajra/laravel-datatables-fractal" />
+      <path value="$PROJECT_DIR$/src/vendor/yajra/laravel-datatables-editor" />
+      <path value="$PROJECT_DIR$/src/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/src/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/src/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/src/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/src/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/src/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/src/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/src/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/src/vendor/maennchen/zipstream-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

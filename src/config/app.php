@@ -183,6 +183,10 @@ return [
          * Logs
          */
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        /*
+         * Datatables
+         */
+        Yajra\DataTables\DataTablesServiceProvider::class,
     ],
 
     /*

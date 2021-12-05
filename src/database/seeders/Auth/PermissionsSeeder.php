@@ -18,6 +18,10 @@ class PermissionsSeeder extends Seeder {
         Permission::create(['name' => 'users.delete']);
         Permission::create(['name' => 'users.change_role']);
         Permission::create(['name' => 'logs']);
+        Permission::create(['name' => 'carnets.index']);
+        Permission::create(['name' => 'carnets.store']);
+        Permission::create(['name' => 'clients.index']);
+        Permission::create(['name' => 'contracts.index']);
 
         /*
          * Admin Role permission
