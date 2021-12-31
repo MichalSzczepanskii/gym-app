@@ -11,8 +11,11 @@ class ClientDataTable extends DataTable {
     
     public function ajax() {
         $dataTable = BaseDataTable::ajax($this->query())
-            ->addColumn('action', function() {
-                return view('components.table-actions');
+            ->addColumn('action', function($row) {
+                return view('components.table-actions', [
+                    'name' => 'clients',
+                    'data' => $row
+                ]);
             })
             ->rawColumns(['action']);
 

@@ -31,6 +31,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('', [CarnetController::class, 'index'])
             ->name('index')
             ->middleware(['permission:carnets.index']);
+        Route::get('add', [CarnetController::class, 'add'])
+            ->name('add')
+            ->middleware(['permission:carnets.store']);
+        Route::post('add', [CarnetController::class, 'store'])
+            ->name('store')
+            ->middleware(['permission:carnets.store']);
+        Route::get('{carnet}/edit', [CarnetController::class, 'edit'])
+            ->where('carnet', '[0-9]+')
+            ->name('edit')
+            ->middleware(['permission:carnets.store']);
+        Route::patch('{carnet}/edit', [CarnetController::class, 'update'])
+            ->where('carnet', '[0-9]+')
+            ->name('update')
+            ->middleware(['permission:carnets.store']);
     });
     Route::name('clients.')->prefix('clients')->group(function () {
         Route::get('', [ClientController::class, 'index'])
@@ -39,6 +53,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/datatable', [ClientController::class, 'dataTable'])
             ->name('datatable')
             ->middleware(['permission:clients.index']);
+        Route::get('/add', [ClientController::class, 'add'])
+            ->name('add')
+            ->middleware(['permission:clients.store']);
+        Route::post('/add', [ClientController::class, 'store'])
+            ->name('store')
+            ->middleware(['permission:clients.store']);
+        Route::get('{client}/edit', [ClientController::class, 'edit'])
+            ->where('client', '[0-9]+')
+            ->name('edit')
+            ->middleware(['permission:clients.store']);
+        Route::patch('{client}/edit', [ClientController::class, 'update'])
+            ->where('client', '[0-9]+')
+            ->name('update')
+            ->middleware(['permission:clients.store']);
     });
     Route::name('contracts.')->prefix('contracts')->group(function () {
         Route::get('', [UserCarnetController::class, 'index'])
@@ -47,5 +75,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/datatable', [UserCarnetController::class, 'dataTable'])
             ->name('datatable')
             ->middleware(['permission:contracts.index']);
+        Route::get('/add', [UserCarnetController::class, 'add'])
+            ->name('add')
+            ->middleware(['permission:contracts.store']);
+        Route::post('/add', [UserCarnetController::class, 'store'])
+            ->name('store')
+            ->middleware(['permission:contracts.store']);
     });
 });

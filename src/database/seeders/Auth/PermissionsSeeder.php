@@ -11,17 +11,26 @@ class PermissionsSeeder extends Seeder {
     public function run() {
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
+        Permission::create(['name' => 'logs']);
+
         Permission::create(['name' => 'users.read_one']);
         Permission::create(['name' => 'users.read']);
         Permission::create(['name' => 'users.create']);
         Permission::create(['name' => 'users.update']);
         Permission::create(['name' => 'users.delete']);
         Permission::create(['name' => 'users.change_role']);
-        Permission::create(['name' => 'logs']);
+
+        //Carnets
         Permission::create(['name' => 'carnets.index']);
         Permission::create(['name' => 'carnets.store']);
+
+        //Clients
         Permission::create(['name' => 'clients.index']);
+        Permission::create(['name' => 'clients.store']);
+
+        //Contracts (UserCarnets)
         Permission::create(['name' => 'contracts.index']);
+        Permission::create(['name' => 'contracts.store']);
 
         /*
          * Admin Role permission

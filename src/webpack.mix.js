@@ -33,5 +33,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/user_carnets.js', 'public/js')
     .copy('resources/views/vendor/datatables/i18n/pl.json', 'public/vendor/datatables/i18n')
     .copy('resources/views/vendor/datatables/i18n/en.json', 'public/vendor/datatables/i18n')
+    .copy('vendor/proengsoft/laravel-jsvalidation/resources/views', 'resources/views/vendor/jsvalidation')
+    .copy('vendor/proengsoft/laravel-jsvalidation/public', 'resources/js/vendor/jsvalidation')
     .sourceMaps()
     .extract();

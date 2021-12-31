@@ -15,7 +15,7 @@ class CreateCarnetsTable extends Migration
     {
         Schema::create('carnets', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->longText('description');
             $table->float('price');
             $table->timestamps();

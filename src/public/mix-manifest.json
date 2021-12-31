@@ -223,5 +223,9 @@
     "/icons/sprites/flag.svg": "/icons/sprites/flag.svg",
     "/icons/sprites/free.svg": "/icons/sprites/free.svg",
     "/vendor/datatables/i18n/pl.json": "/vendor/datatables/i18n/pl.json",
-    "/vendor/datatables/i18n/en.json": "/vendor/datatables/i18n/en.json"
+    "/vendor/datatables/i18n/en.json": "/vendor/datatables/i18n/en.json",
+    "/resources/views/vendor/jsvalidation/bootstrap.php": "/resources/views/vendor/jsvalidation/bootstrap.php",
+    "/resources/views/vendor/jsvalidation/bootstrap4.php": "/resources/views/vendor/jsvalidation/bootstrap4.php",
+    "/resources/views/vendor/jsvalidation/bootstrap5.php": "/resources/views/vendor/jsvalidation/bootstrap5.php",
+    "/resources/views/vendor/jsvalidation/uikit.php": "/resources/views/vendor/jsvalidation/uikit.php"
 }

@@ -142,3 +142,11 @@ table [aria-sort]{
 .dataTable tbody td {
     @apply px-6 py-4 whitespace-nowrap;
 }
+
+.invalid-feedback {
+    @apply text-red-700 text-sm mt-3;
+}
+
+.is-invalid {
+    @apply focus:ring-red-500 focus:border-red-500 border-red-300
+}

@@ -63,19 +63,16 @@
     <x-dashboard.sidebar/>
     <div class="w-full flex flex-col min-h-screen">
         <div class="bg-white w-full h-16 flex justify-between items-center px-4 py-2 shadow-md lg:justify-end lg:px-10">
-            <div class="mr-2">{{ Auth::user()->name }}</div>
             <i class="icon-menu text-2xl cursor-pointer lg:hidden text-gray-600" id="hamburger" onclick="toggleMenu()"></i>
             <img src="{{asset('img/person1.jpg')}}" class="w-12 h-12 p-0.5 rounded-full border border-purple-700 cursor-pointer" alt="Person" id="userAvatar">
             <x-dashboard.usercard/>
         </div>
         <div class="px-5 flex flex-col lg:px-8 h-full lg:pt-2 pb-5">
-            <h2 class="text-2xl font-semibold py-4 lg:py-5">{{ $title ?? 'Dashboard' }}</h2>
-            <div class="bg-white rounded-md shadow p-6 h-full">
                 @yield('content')
-            </div>
         </div>
     </div>
 </div>
+@include('layouts.toasts')
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/dashboard.js')}}"></script>
 <script src="{{asset('js/manifest.js')}}"></script>

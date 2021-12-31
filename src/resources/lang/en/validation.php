@@ -140,6 +140,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'carnets' => [
+            'name_unique' => 'Name is already taken'
+        ]
     ],
 
     /*
